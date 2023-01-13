@@ -1,0 +1,50 @@
+﻿// using System.Threading;
+
+Console.Clear();
+
+int xa = 40, ya = 1,
+    xb = 1, yb = 30,
+    xc = 80, yc = 30;
+
+Console.Clear();
+
+// Console.SetCursorPosition(xa, ya);
+// Console.Write("+");
+
+// Console.SetCursorPosition(xb, yb);
+// Console.Write("+");
+
+// Console.SetCursorPosition(xc, yc);
+// Console.Write("+");
+
+
+int count = 0;
+int x = xa, y = ya;
+
+while(count < 5000)
+{
+    int what = new Random().Next(0, 3);
+    if (what == 0)
+    {
+        x = (x + xa) / 2;
+        y = (y + ya) / 2;
+    }
+    if (what == 1)
+    {
+        x = (x + xb) / 2;
+        y = (y + yb) / 2;
+    }
+    if (what == 2)
+    {
+        x = (x + xc) / 2;
+        y = (y + yc) / 2;
+    }
+
+    Console.SetCursorPosition(x, y);
+
+    Console.Write("+");
+
+    count = count + 1;
+    Thread.Sleep(1);
+}
+Console.SetCursorPosition(0, 32);
